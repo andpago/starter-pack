@@ -237,6 +237,7 @@ def create_utilities():
         if paths.HOST_OS != 'win':
             with open(paths.utilities(util.name, 'manifest.json')) as f:
                 exe = json.load(f)[paths.HOST_OS + '_exe']
+                exe = f'./build/LNP/utilities/{util.name}/{exe}'
             os.chmod(exe, 0o110 | os.stat(exe).st_mode)
 
 
